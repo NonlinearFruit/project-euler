@@ -1,0 +1,14 @@
+[project]
+name = "project-euler"
+version = "3.1.4"
+description = "https://projecteuler.net"
+dependencies = []
+requires-python = "==3.12.*"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=8.3.1",
+]
+
+[tool.pdm.scripts]
+test = "pytest"
