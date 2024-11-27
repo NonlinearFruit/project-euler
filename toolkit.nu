@@ -1,3 +1,5 @@
+#!/usr/bin/env nu
+
 def --wrapped main [...rest] {
   nu -c $'use toolkit.nu; toolkit ($rest | str join (char space))'
 }
