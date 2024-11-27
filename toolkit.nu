@@ -3,11 +3,16 @@ def --wrapped main [...rest] {
 }
 
 export def pull [problemNumber] {
-  let file = {
+  let file = http get $"https://projecteuler.net/problem=($problemNumber)"
+  | parse '<title>#{number} {title} - Project Euler</title>'
+  | get title.0
+  | str snake-case
+  | {
     parent: project_euler
-    stem: $"test_pe($problemNumber)"
+    stem: $"test_pe($problemNumber)_($in)"
     extension: py
-  } | path join
+  }
+  | path join
   http get $"https://projecteuler.net/minimal=($problemNumber)"
   | lines
   | each { $"# ($in)" }
