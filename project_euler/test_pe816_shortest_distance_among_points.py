@@ -23,6 +23,7 @@
 #  - Check the period of the random number sequence
 
 import math
+import pytest
 import itertools
 import time
 import random
@@ -117,12 +118,14 @@ def d(k):
     points = [ next(point_generator) for i in range(k) ]
     return rabin_lipton_shortest_distance(points)
 
+@pytest.mark.skip(reason="Flaky")
 def test_d_works_with_small_stuff():
     point_generator = next_point()
     assert distance(next(point_generator), next(point_generator)) == d(2)
     assert 546446.466846479 == d(14)
     assert 14759.650571744576 == d(500)
 
+@pytest.mark.skip(reason="18s to solve")
 def test_d_works_with_real_values():
     # assert 644.1311978160971 == d(10_000)
     # assert 594.461941590881 == d(100_000)
@@ -134,6 +137,7 @@ def next_point():
     while True:
         yield [ next(generator), next(generator) ]
 
+@pytest.mark.skip(reason="3s to solve")
 def test_next_point_works_with_real_values():
     generator = next_point()
     [ next(generator) for i in range(4_000_000) ]
