@@ -5,3 +5,7 @@
 </div>
 
 # [Project Euler](https://projecteuler.net)
+
+- [required] pdm <https://github.com/pdm-project/pdm>
+- `pdm install`
+- `pdm test`
