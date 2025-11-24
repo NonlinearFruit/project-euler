@@ -30,3 +30,76 @@ export def download-challenge [problemNumber] {
   | str join (char newline)
   | save $file
 }
+
+export def update-readme [] {
+$"
+<div align=\"center\">
+  <img src=\"https://projecteuler.net/profile/NonlinearFruit.png\"/>
+  <img src=\"https://projecteuler.net/profile/unclebobmartin.png\"/>
+  <img src=\"https://projecteuler.net/profile/africh.png\"/>
+</div>
+
+# [Project Euler]\(https://projecteuler.net)
+
+## Solutions
+
+(table-of-scores)
+
+## How To
+
+- [required] pdm <https://github.com/pdm-project/pdm>
+- [required] `pdm install`
+```sh
+./toolkit.nu download-challenge $CHALLENGE
+git add -A
+vim project_euler/ # Edit challenge
+pdm test           # Run tests
+./toolkit.nu update-readme
+git add -A
+git commit -m \"Solve PE $CHALLENGE: $TITLE\"
+```
+
+## Help
+
+(help-docs)
+"
+  | save -f README.md
+}
+
+def table-of-scores [] {
+  ls project_euler/test_*
+  | each {|file|
+    $file.name
+    | path parse
+    | get stem
+    | parse "test_pe{number}_{challenge}"
+    | first
+    | update number { into int }
+    | update challenge { str title-case }
+    | insert links {|it|
+      $"\([src]\(($file.name))) \([web]\(https://projecteuler.net/problem=($it.number)))"
+    }
+  }
+  | sort-by number
+  | to md
+}
+
+def help-docs [] {
+  scope modules
+  | where name == toolkit
+  | get commands.0.name
+  | each {|cmd|
+    ^nu -c $"use toolkit.nu; toolkit ($cmd) -h"
+    | str trim
+    | $"
+<details><summary>toolkit ($cmd)</summary>
+
+```
+($in)
+```
+</details>
+    "
+  }
+  | to text
+  | ansi strip
+}
