@@ -13,6 +13,7 @@
 |-|-|-|
 |88|Product Sum Numbers|([src](project_euler/test_pe88_product_sum_numbers.py)) ([web](https://projecteuler.net/problem=88))|
 |700|Eulercoin|([src](project_euler/test_pe700_eulercoin.py)) ([web](https://projecteuler.net/problem=700))|
+|751|Concatenation Coincidence|([src](project_euler/test_pe751_concatenation_coincidence.py)) ([web](https://projecteuler.net/problem=751))|
 |800|Hybrid Integers|([src](project_euler/test_pe800_hybrid_integers.py)) ([web](https://projecteuler.net/problem=800))|
 |808|Reversible Prime Squares|([src](project_euler/test_pe808_reversible_prime_squares.py)) ([web](https://projecteuler.net/problem=808))|
 |816|Shortest Distance Among Points|([src](project_euler/test_pe816_shortest_distance_among_points.py)) ([web](https://projecteuler.net/problem=816))|
