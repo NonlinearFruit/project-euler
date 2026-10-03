@@ -13,7 +13,7 @@ def --wrapped main [...rest] {
 export def download-challenge [problemNumber] {
   const path_to_src_folder = [(path self) .. project_euler] | path join
   let file = http get $"https://projecteuler.net/problem=($problemNumber)"
-  | parse '<title>#{number} {title} - Project Euler</title>'
+  | parse '{_}<title>#{number} {title} - Project Euler</title>{_}'
   | get title.0
   | str snake-case
   | {
