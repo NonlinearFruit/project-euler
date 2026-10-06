@@ -9,15 +9,16 @@
 
 ## Solutions
 
-|number|challenge|links|
-|-|-|-|
-|88|Product Sum Numbers|([src](project_euler/test_pe88_product_sum_numbers.py)) ([web](https://projecteuler.net/problem=88))|
-|700|Eulercoin|([src](project_euler/test_pe700_eulercoin.py)) ([web](https://projecteuler.net/problem=700))|
-|751|Concatenation Coincidence|([src](project_euler/test_pe751_concatenation_coincidence.py)) ([web](https://projecteuler.net/problem=751))|
-|800|Hybrid Integers|([src](project_euler/test_pe800_hybrid_integers.py)) ([web](https://projecteuler.net/problem=800))|
-|808|Reversible Prime Squares|([src](project_euler/test_pe808_reversible_prime_squares.py)) ([web](https://projecteuler.net/problem=808))|
-|816|Shortest Distance Among Points|([src](project_euler/test_pe816_shortest_distance_among_points.py)) ([web](https://projecteuler.net/problem=816))|
-|932|2025|([src](project_euler/test_pe932_2025.py)) ([web](https://projecteuler.net/problem=932))|
+| number | challenge | links |
+| --- | --- | --- |
+| 88 | Product Sum Numbers | ([src](project_euler/test_pe88_product_sum_numbers.py)) ([web](https://projecteuler.net/problem=88)) |
+| 104 | Pandigital Fibonacci Ends | ([src](project_euler/test_pe104_pandigital_fibonacci_ends.py)) ([web](https://projecteuler.net/problem=104)) |
+| 700 | Eulercoin | ([src](project_euler/test_pe700_eulercoin.py)) ([web](https://projecteuler.net/problem=700)) |
+| 751 | Concatenation Coincidence | ([src](project_euler/test_pe751_concatenation_coincidence.py)) ([web](https://projecteuler.net/problem=751)) |
+| 800 | Hybrid Integers | ([src](project_euler/test_pe800_hybrid_integers.py)) ([web](https://projecteuler.net/problem=800)) |
+| 808 | Reversible Prime Squares | ([src](project_euler/test_pe808_reversible_prime_squares.py)) ([web](https://projecteuler.net/problem=808)) |
+| 816 | Shortest Distance Among Points | ([src](project_euler/test_pe816_shortest_distance_among_points.py)) ([web](https://projecteuler.net/problem=816)) |
+| 932 | 2025 | ([src](project_euler/test_pe932_2025.py)) ([web](https://projecteuler.net/problem=932)) |
 
 ## How To
 
@@ -45,6 +46,9 @@ Usage:
 Flags:
   -h, --help: Display the help message for this command
 
+Command Type:
+  > custom
+
 Parameters:
   problemNumber <any>
 
@@ -66,6 +70,9 @@ Usage:
 
 Flags:
   -h, --help: Display the help message for this command
+
+Command Type:
+  > custom
 
 Input/output types:
   ╭───┬───────┬────────╮
